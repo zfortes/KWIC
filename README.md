@@ -1,1 +1,1 @@
-KWIC
+Key Word In Context
