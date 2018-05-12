@@ -22,7 +22,7 @@ public class Main
             BufferedReader lerArq = new BufferedReader(arq);
 
             String linha = lerArq.readLine();
-            //Manda linha para wordshift:
+            //Manda linha para wordshift(teste):
             WordShift.shift(linha);
 
 
