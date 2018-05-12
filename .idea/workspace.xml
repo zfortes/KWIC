@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a75b4fd-31d2-486d-87b9-9f6237e99e11" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KWIC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/KWIC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KWIC/KWIC/DataStorageManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KWIC/KWIC/DataStorageManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KWIC/KWIC/FileBasedStorageManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KWIC/KWIC/FileBasedStorageManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shifts.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/KWIC/KWIC/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KWIC/KWIC/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KWIC/KWIC/StopWordManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KWIC/KWIC/StopWordManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KWIC/DataStorageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KWIC/DataStorageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KWIC/FileBasedStorageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KWIC/FileBasedStorageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KWIC/IndexManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KWIC/IndexManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KWIC/KWIC/WordShift.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KWIC/KWIC/WordShift.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/KWIC/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KWIC/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KWIC/StopWordManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KWIC/StopWordManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/titulo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/titulo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KWIC/WordShift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KWIC/WordShift.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/titulo.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -71,8 +62,8 @@
       <file leaf-file-name="WordShift.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/KWIC/WordShift.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -80,8 +71,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/KWIC/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            <state relative-caret-position="476">
+              <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -266,11 +260,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13008000" />
+    <option name="totallyTimeSpent" value="13140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -284,10 +277,10 @@
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32925585" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.103975534" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.27522936" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18125" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18125" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="bottom" id="SBT Execute" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -378,8 +371,86 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/KWIC/Main.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/titulo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="37" lean-forward="true" selection-start-column="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KWIC/DBLPStorageManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KWIC/DataStorageManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KWIC/FileBasedStorageManager.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#179#180#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+            <element signature="e#247#248#0" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KWIC/IndexManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#71#72#0" expanded="true" />
+            <element signature="e#98#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KWIC/StopWordManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="17" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="38" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KWIC/WordShift.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KWIC/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
