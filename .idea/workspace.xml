@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a16d9316-7f8a-406c-a9b8-2a15a27fc2a5" name="Default" comment="" />
+    <list default="true" id="e90efe4e-bd8b-4f65-af16-b41800945bc8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KWIC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/KWIC.iml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -10,6 +14,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
@@ -26,15 +31,10 @@
       </file>
     </leaf>
   </component>
+=======
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/README.md" />
-      </list>
-    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -46,19 +46,23 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
-    <option name="width" value="1346" />
-    <option name="height" value="698" />
+    <option name="y" value="25" />
+    <option name="width" value="1920" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+=======
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -66,17 +70,28 @@
               <item name="KWIC" type="b2602c69:ProjectViewProjectNode" />
               <item name="KWIC" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+=======
+            <path>
+              <item name="KWIC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="KWIC" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -138,21 +153,36 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a16d9316-7f8a-406c-a9b8-2a15a27fc2a5" name="Default" comment="" />
-      <created>1525786941704</created>
+      <changelist id="e90efe4e-bd8b-4f65-af16-b41800945bc8" name="Default" comment="" />
+      <created>1525994096873</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1525786941704</updated>
       <workItem from="1525786943265" duration="341000" />
       <workItem from="1525787397012" duration="313000" />
+=======
+      <updated>1525994096873</updated>
+      <workItem from="1525994100977" duration="402000" />
+      <workItem from="1525994769665" duration="100000" />
+      <workItem from="1525994890033" duration="1328000" />
+      <workItem from="1526037695669" duration="228000" />
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+=======
+    <option name="totallyTimeSpent" value="2058000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -165,12 +195,20 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3004695" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24304539" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="SBT Execute" order="7" side_tool="true" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.12820514" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24583334" />
+      <window_info anchor="right" id="Database" order="3" />
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -191,6 +229,7 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -203,4 +242,6 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
 </project>
