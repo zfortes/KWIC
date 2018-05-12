@@ -17,6 +17,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="DataStorageManager.java" pinned="false" current-in-tab="false">
@@ -85,12 +86,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+=======
+<<<<<<< HEAD
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret column="19" selection-start-column="19" selection-end-column="19" />
+              </first_editor>
+              <second_editor />
+>>>>>>> master
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -98,6 +113,10 @@
       </list>
     </option>
   </component>
+=======
+=======
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
+>>>>>>> master
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -133,7 +152,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+<<<<<<< HEAD
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+=======
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
+>>>>>>> master
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -141,23 +171,36 @@
               <item name="KWIC" type="b2602c69:ProjectViewProjectNode" />
               <item name="KWIC" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+=======
             <path>
               <item name="KWIC" type="b2602c69:ProjectViewProjectNode" />
               <item name="KWIC" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
             <path>
               <item name="KWIC" type="b2602c69:ProjectViewProjectNode" />
               <item name="KWIC" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="KWIC" type="462c0819:PsiDirectoryNode" />
             </path>
+=======
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
+>>>>>>> master
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
+=======
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
+>>>>>>> master
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,19 +297,48 @@
       <created>1526150434307</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1526150434307</updated>
       <workItem from="1526150441664" duration="13008000" />
+=======
+<<<<<<< HEAD
+      <updated>1525786941704</updated>
+      <workItem from="1525786943265" duration="341000" />
+      <workItem from="1525787397012" duration="313000" />
+=======
+      <updated>1525994096873</updated>
+      <workItem from="1525994100977" duration="402000" />
+      <workItem from="1525994769665" duration="100000" />
+      <workItem from="1525994890033" duration="1328000" />
+      <workItem from="1526037695669" duration="228000" />
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
+>>>>>>> master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="13140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="654000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+=======
+    <option name="totallyTimeSpent" value="2058000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
+>>>>>>> master
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="SBT Console" />
       <window_info anchor="bottom" id="Messages" weight="0.32925585" />
       <window_info anchor="right" id="Palette&#9;" />
@@ -283,6 +355,31 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18125" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="bottom" id="SBT Execute" side_tool="true" />
+=======
+      <window_info anchor="bottom" id="SBT Console" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
+<<<<<<< HEAD
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3004695" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24304539" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="SBT Execute" order="7" side_tool="true" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.12820514" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24583334" />
+      <window_info anchor="right" id="Database" order="3" />
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
+>>>>>>> master
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
@@ -303,6 +400,7 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/titulo.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -451,8 +549,24 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+<<<<<<< HEAD
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="19" selection-start-column="19" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
+>>>>>>> master
         </state>
       </provider>
     </entry>
   </component>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> ae0ae65a1273f38aa0d6d3a405e85a1371e11eae
+>>>>>>> master
 </project>
