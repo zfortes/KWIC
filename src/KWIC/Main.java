@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import KWIC.WordShift;
 
 public class Main
 {
@@ -21,8 +22,12 @@ public class Main
             BufferedReader lerArq = new BufferedReader(arq);
 
             String linha = lerArq.readLine();
+            //Manda linha para wordshift:
+            WordShift.shift(linha);
 
-            while (linha != null) {
+
+            while (linha != null)
+            {
                 System.out.printf("%s\n", linha);
 
                 linha = lerArq.readLine();
@@ -37,6 +42,4 @@ public class Main
 
         System.out.println();
     }
-
-
 }
