@@ -15,20 +15,19 @@ public class Main
         System.out.printf("nome de arquivo:\n");
         String nome = ler.nextLine();
 
-        System.out.printf("\nConteúdo do texto:\n");
+        //System.out.printf("\nConteúdo do texto:\n");
         try
         {
             FileReader arq = new FileReader(nome);
             BufferedReader lerArq = new BufferedReader(arq);
 
             String linha = lerArq.readLine();
-            //Manda linha para wordshift(teste):
-            WordShift.shift(linha);
-
 
             while (linha != null)
             {
-                System.out.printf("%s\n", linha);
+                //Manda linha para wordshift(teste):
+                WordShift.shift(linha);
+                //System.out.printf("%s\n", linha);
 
                 linha = lerArq.readLine();
             }

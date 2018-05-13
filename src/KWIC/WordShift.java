@@ -12,6 +12,8 @@ public class WordShift
 
     public static void shift(String frase)
     {
+        lista_de_palavras = new ArrayList<String>();//limpamdo frase anterior
+
         //Transforma frase em lista de palavras:
         String palavra_temp = new String();
 
@@ -33,20 +35,23 @@ public class WordShift
 
         //fazendo shitfs
         int num_palavras = lista_de_palavras.size();
-        //System.out.printf("numero de palavras: %d\n",num_palavras);
 
-        //gerando as ordenaçoes possíveis
         //faz todos os shifts possíveis para a lista de palavras
-        System.out.printf("%s\n",lista_de_palavras.toString());
+        //System.out.printf("%s\n",lista_de_palavras.toString());
         for(int i=0; i<num_palavras; i++)
         {
 
-            Collections.rotate(lista_de_palavras,1); // troca primeira e ultima posição
-            System.out.printf("%s\n",lista_de_palavras.toString());
+            Collections.rotate(lista_de_palavras,1); // rotaciona lista
+
+            for(String s: lista_de_palavras)
+            {
+                System.out.print(s);
+                System.out.print(" ");
+            }
+            System.out.println();
 
             //colocando em arquivo
-            /*
-            try
+            /*try
             {
                 FileWriter arq = new FileWriter("shifts.txt");
                 PrintWriter gravarArq = new PrintWriter(arq);
@@ -62,6 +67,5 @@ public class WordShift
             }
             */
         }
-
     }
 }
