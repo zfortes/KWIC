@@ -3,6 +3,9 @@ package test.java;
 
 
 import KWIC.IndexManager;
+import KWIC.IndexStorage;
+import org.junit.jupiter.api.Test;
+import sun.awt.image.ImageWatched;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -10,14 +13,13 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class IndexManagerTest extends IndexManager {
-    @org.junit.jupiter.api.Test
-    public boolean isEmpty() {
+    @Test
+    public void isEmptyTest() {
         IndexManager index = new IndexManager();
         index.initMap("Programming", "Programming in Scala", 0);
         index.initMap("Programming", "Object-oriented Programming", 2);
 
         assertEquals(index.isEmpty(), false);
-        return false;
     }
 
     @org.junit.jupiter.api.Test
@@ -42,19 +44,35 @@ public class IndexManagerTest extends IndexManager {
         manager.initMap("Java", "Java is also cool, isn't it?", 0);
 
 
-        List<String> esperado = new LinkedList<>();
-        esperado.add("Java");
-        esperado.add("Programming");
-        esperado.add("Scala");
+        List<IndexStorage> esperado = new LinkedList<>();
 
+        IndexStorage index = new IndexStorage();
+        index.setLine("Programming in Scala");
+        index.setPosition(0);
+        esperado.add(index);
 
-        assertEquals(manager.sortedWords(), esperado);
+        List<IndexStorage> retorno = manager.ocurrencesOfWord("Java");
+        for (IndexStorage n : retorno) {
+            System.out.println(n.getLine());
+        }
+
+        assertEquals(retorno.size(), 1);
     }
 
     @org.junit.jupiter.api.Test
-    public List<String> sortedWords() {
+    public void sortedWordsTest() {
+        IndexManager manager = new IndexManager();
+
+        manager.initMap("Programming", "Programming in Scala", 0);
+        manager.initMap("Programming", "Object-oriented Programming", 2);
+        manager.initMap("Scala", "Programming in Scala", 2);
+        manager.initMap("Java", "Java is also cool, isn't it?", 0);
+
         List<String> list = new LinkedList<>();
-        return list;
+        list.add("Java");
+        list.add("Programming");
+        list.add("Scala");
+        assertEquals(manager.sortedWords(), list);
     }
 //
 
