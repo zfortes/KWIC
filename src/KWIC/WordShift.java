@@ -33,15 +33,14 @@ public class WordShift
         }
         lista_de_palavras.add(palavra_temp);
 
-        //fazendo shitfs
+
         int num_palavras = lista_de_palavras.size();
 
         //faz todos os shifts possíveis para a lista de palavras
-        //System.out.printf("%s\n",lista_de_palavras.toString());
         for(int i=0; i<num_palavras; i++)
         {
 
-            Collections.rotate(lista_de_palavras,1); // rotaciona lista
+            Collections.rotate(lista_de_palavras,1); //rotaciona lista
 
             for(String s: lista_de_palavras)
             {
@@ -49,23 +48,6 @@ public class WordShift
                 System.out.print(" ");
             }
             System.out.println();
-
-            //colocando em arquivo
-            /*try
-            {
-                FileWriter arq = new FileWriter("shifts.txt");
-                PrintWriter gravarArq = new PrintWriter(arq);
-
-                gravarArq.printf("%s",lista_de_palavras.get(i));
-                arq.close();
-
-            }
-            catch (IOException e)
-            {
-                System.err.printf("Erro ao escrever: %s.\n",
-                        e.getMessage());
-            }
-            */
         }
     }
 }
