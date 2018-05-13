@@ -10,44 +10,58 @@ public class WordShift
 {
     static List<String> lista_de_palavras = new ArrayList<String>();
 
+    /*public static void sort_shifts()
+    {
+        Collections.sort(lista_de_palavras);
+        System.out.print(lista_de_palavras.toString());
+
+    }*/
+
     public static void shift(String frase)
     {
-        lista_de_palavras = new ArrayList<String>();//limpamdo frase anterior
+        lista_de_palavras = new ArrayList<String>();//limpando frase anterior
 
         //Transforma frase em lista de palavras:
         String palavra_temp = new String();
 
-        for (int i=0; i<frase.length(); i++)
-        {
-
+        for (int i = 0; i < frase.length(); i++) {
             char c = frase.charAt(i);
-            if (c != ' ')
-            {
+            if (c != ' ') {
                 palavra_temp += c;
-            }
-            else
-            {
+            } else {
                 lista_de_palavras.add(palavra_temp);
                 palavra_temp = new String();
             }
         }
         lista_de_palavras.add(palavra_temp);
 
-
-        int num_palavras = lista_de_palavras.size();
-
-        //faz todos os shifts possíveis para a lista de palavras
-        for(int i=0; i<num_palavras; i++)
+        try
         {
+            FileWriter arq = new FileWriter("shifts.txt");
+            PrintWriter gravarArq = new PrintWriter(arq);
 
-            Collections.rotate(lista_de_palavras,1); //rotaciona lista
+            int num_palavras = lista_de_palavras.size();
+            //faz todos os shifts possíveis para a lista de palavras
+            for (int i = 0; i < num_palavras; i++) {
+                Collections.rotate(lista_de_palavras, 1); //rotaciona lista
+                for (String s : lista_de_palavras)
+                {
+                    System.out.print(s);
+                    System.out.print(" ");
 
-            for(String s: lista_de_palavras)
-            {
-                System.out.print(s);
-                System.out.print(" ");
+                    //Colocando no arquivo
+                    gravarArq.printf(s);
+                    gravarArq.printf(" ");
+                }
+                System.out.println();
+                gravarArq.println();
             }
-            System.out.println();
+            arq.close();
+        }
+        catch (IOException e)
+        {
+            System.err.printf("Erro ao abrir: %s.\n",
+                    e.getMessage());
         }
     }
 }
