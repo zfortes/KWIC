@@ -1,3 +1,5 @@
 idea/
 *.xml
 *.xml
+*.iml
+*.txt
