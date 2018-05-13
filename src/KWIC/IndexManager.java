@@ -1,16 +1,13 @@
 package KWIC;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class IndexManager {
 
     Map<String, List<IndexStorage>> map = new HashMap<String, List<IndexStorage>>();
-    public boolean isEmpty(){
 
-        return false;
+    public boolean isEmpty(){
+        return map.isEmpty();
     }
 
     public void initMap(String word, String line, int pos){
@@ -18,20 +15,25 @@ public class IndexManager {
         IndexStorage index = new IndexStorage();
         index.setLine(line);
         index.setPosition(pos);
-
-        map.put(word, List.add(index));
+        if (map.containsKey(word)) {
+            map.get(word).add(index);
+        }else{
+            List<IndexStorage> list = new LinkedList<>();
+            list.add(index);
+            map.put(word, list);
+        }
     }
 
     public List<IndexStorage> ocurrencesOfWord(String word){
         return map.get(word);
     }
 
-    public List<String> sorteWords(){
-        List<String> list = new List<String>();
-        map.forEach((d) -> {
-            list.add(d);
-        });
-        Collections.sort(list);
-        return list;
+    public List<String> sortedWords(){
+//        List<String> lista;
+//        lista = map.keys();
+//        Collections.sort(lista);
+        SortedSet<String> keys = new TreeSet<String>(map.keySet());
+        List<String> lista = new ArrayList<>(keys);
+        return lista;
     }
 }
