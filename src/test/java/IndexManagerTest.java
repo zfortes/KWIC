@@ -43,18 +43,7 @@ public class IndexManagerTest extends IndexManager {
         manager.initMap("Scala", "Programming in Scala", 2);
         manager.initMap("Java", "Java is also cool, isn't it?", 0);
 
-
-        List<IndexStorage> esperado = new LinkedList<>();
-
-        IndexStorage index = new IndexStorage();
-        index.setLine("Programming in Scala");
-        index.setPosition(0);
-        esperado.add(index);
-
         List<IndexStorage> retorno = manager.ocurrencesOfWord("Java");
-        for (IndexStorage n : retorno) {
-            System.out.println(n.getLine());
-        }
 
         assertEquals(retorno.size(), 1);
     }
