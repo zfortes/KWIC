@@ -4,7 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-import KWIC.WordShift;
+import KWIC.*;
+import java.util.*;
 
 public class Main
 {
@@ -20,7 +21,7 @@ public class Main
 		
 		try
         {
-            FileReader arq = new FileReader(nome);
+            FileReader arq = new FileReader(nArq);
             BufferedReader lerArq = new BufferedReader(arq);
 
             String linha = lerArq.readLine();
@@ -34,25 +35,34 @@ public class Main
 				String words = linha.split(' ');
 				num_linha++;
 				
-				for(int pos=0;pos <= words.length) //achar função q de tamanho da palavra
+				for(int pos=0;pos <= words.length();pos++) //achar função q de tamanho da palavra
 				{
-					im.map(words(pos),linha,pos) //aqui o primeiro argumento deve passar o caractere atual da palavra					
+					im.map(words(pos),linha,pos); //aqui o primeiro argumento deve passar o caractere atual da palavra
 				}	
             }	
 			
 			//Exporta o resultado como KWIC:
-			List<String> w = new List<String>;
+			List<String> w = new ArrayList<String>();
+            w = im.sortedWords;
+            int i=0;
 			for(String s: w)  //deve percorer a lista de palavras mapeadas no indexmanager
 			{
-				im.occurrencesOfWord(s).foreach( { case (linha,pos) => println(WordShift.shift(line.split(' ').toList, pos, 0).mkString(" ")) })
+				if(im.ocurrencesOfWord(s) == s)
+				{
+					List<String> t = new ArrayList<String>();
+					t = WordShift.shift(w,i,0);
+					System.out.print("%s\n",t.toString());
+				}
+				i++;
+
+						//foreach( { case (linha,pos) => println(WordShift.shift(line.split(' ').toList, pos, 0).mkString(" ")) })
 				//Ainda falta portar isso.
 			}
 
             arq.close();
-        } 
-		catch (IOException e)
+        } catch (IOException e)
 		{
-			System.err.printf("Erro ao abrir arquivo: %s.\n", e.getMessage());		
+			System.err.printf("Erro ao abrir arquivo: %s.\n",e.getMessage());
 		}
 		
 		 // Factory Method for storages (until we do not explor DI) 
