@@ -5,3 +5,5 @@ out/
 *.iml
 *.txt
 /.metadata/
+KWIC.iml
+shifts.txt
