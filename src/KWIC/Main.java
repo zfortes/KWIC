@@ -26,7 +26,7 @@ public class Main
             while (linha != null)
             {
                 //Manda linha para gerar shifts:
-                WordShift.shift(linha);
+                //WordShift.shift(linha);
 
                 linha = lerArq.readLine();
             }
