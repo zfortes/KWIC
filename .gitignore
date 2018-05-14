@@ -4,3 +4,4 @@ out/
 *.xml
 *.iml
 *.txt
+/.metadata/

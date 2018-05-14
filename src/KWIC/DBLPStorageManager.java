@@ -15,7 +15,7 @@ public class DBLPStorageManager implements DataStorageManager {
     @Override
     public void init(String nArq) {
 
-        List<String> list = new LinkedList<>();
+        List<String> list = new LinkedList();
         try {
             URL url = new URL("http://dblp.org/search/publ/api?q="+nArq+"&format=json");
             BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
@@ -37,7 +37,7 @@ public class DBLPStorageManager implements DataStorageManager {
     }
 
     public List<String> jsonParse(List<String> list){
-        List<String> titles = new LinkedList<>();
+        List<String> titles = new LinkedList();
 
         for (String i : list){
             if(i.contains("title")){
