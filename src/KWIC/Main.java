@@ -27,7 +27,7 @@ public class Main
 
             for (int pos=0; pos < words.length; pos++){
                 im.initMap(words[pos], linha, pos);
-                System.out.println(pos);
+//                System.out.println(pos);
             }
         }
 
@@ -35,15 +35,35 @@ public class Main
 
         WordShift ws = new WordShift();
         for (String n : list){
+            List<IndexStorage> nlist = new LinkedList();
             im.ocurrencesOfWord(n).forEach((d)->{
-                List<String> nlist = new LinkedList();
+                nlist.add(d);
+//                System.out.println("________________________________");
+//                System.out.println("Word : "+ n);
+//                System.out.println("Line : " + d.getLine());
+//                System.out.println("Posicao : " + d.getPosition());
+//                System.out.println("________________________________");
 
-                Collections.addAll(nlist, d.getLine().split(" "));
+//                Collections.addAll(nlist, d.getLine().split(" "));
 
-                System.out.println(nlist.size());
+//                System.out.println(d.getLine());
 
-                ws.shift(nlist, d.getPosition(), 0);
+//                for (String j : nlist){
+//                    System.out.println(j);
+//                }
+
+
             });
+
+//            for (String j : nlist){
+//                    System.out.println(j);
+//            }
+
+            List<String> list1 = ws.shiftBegin(nlist, n);
+            System.out.println("Word = " + n);
+            for (String j : list1){
+                System.out.println(j);
+            }
         }
 
     }

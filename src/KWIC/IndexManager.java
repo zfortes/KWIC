@@ -15,6 +15,8 @@ public class IndexManager {
         IndexStorage index = new IndexStorage();
         index.setLine(line);
         index.setPosition(pos);
+
+
         if (map.containsKey(word)) {
             map.get(word).add(index);
         }else{
