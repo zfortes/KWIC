@@ -13,7 +13,7 @@ public class WordShift
 
     /*static List<String> lista_de_palavras = new ArrayList<String>();
 
-    *//*public static void sort_shifts()
+     *//*public static void sort_shifts()
     {
         Collections.sort(lista_de_palavras);
         System.out.print(lista_de_palavras.toString());
@@ -68,36 +68,36 @@ public class WordShift
         }
     }*/
 
-   public static List<String> shift(List<String> words, int pos, int target)
-   {
-    List<String> l,r = new ArrayList<String>();
-    l = words.subList(0,pos);
-    r = words.subList(0,pos);
-
-    if (l.toString().replaceAll("[\\[\\]]", "").length() < (target -5))
+    public static List<String> shift(List<String> words, int pos, int target)
     {
-        return shiftRight(l,r,target);
+        List<String> l,r = new ArrayList<String>();
+        l = words.subList(0,pos);
+        r = words.subList(0,pos);
+
+        if (l.toString().replaceAll("[\\[\\]]", "").length() < (target -5))
+        {
+            return shiftRight(l,r,target);
+        }
+        return shiftLeft(l,r,target);
     }
-    return shiftLeft(l,r,target);
-   }
 
-   public static List<String> shiftRight(List<String> l,List<String> r,int target)
-   {
-       if(r.toString().replaceAll("[\\[\\]]", "").length() == 0)
-       {
+    public static List<String> shiftRight(List<String> l,List<String> r,int target)
+    {
+        if(r.toString().replaceAll("[\\[\\]]", "").length() == 0)
+        {
             return l;
-       }
+        }
 
-       List<String> r1 = new ArrayList<String>();
-       List<String> r2 = new ArrayList<String>();
-       r2 = r.subList(0,r.toString().replaceAll("[\\[\\]]", "").length()-1);
-       r1 = r.subList(0,r.toString().replaceAll("[\\[\\]]", "").length()-1);
-       List<String> l1 = new ArrayList<String>();
-       l1.addAll(r2);
-       l1.addAll(l);
+        List<String> r1 = new ArrayList<String>();
+        List<String> r2 = new ArrayList<String>();
+        r2 = r.subList(0,r.toString().replaceAll("[\\[\\]]", "").length()-1);
+        r1 = r.subList(0,r.toString().replaceAll("[\\[\\]]", "").length()-1);
+        List<String> l1 = new ArrayList<String>();
+        l1.addAll(r2);
+        l1.addAll(l);
 
-       return shiftRight(l1,r1,target);
-   }
+        return shiftRight(l1,r1,target);
+    }
 
     public static List<String> shiftLeft(List<String> l,List<String> r,int target)
     {
