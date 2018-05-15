@@ -3,6 +3,9 @@ package KWIC;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 import KWIC.WordShift;
 
@@ -24,9 +27,24 @@ public class Main
 
             for (int pos=0; pos < words.length; pos++){
                 im.initMap(words[pos], linha, pos);
+                System.out.println(pos);
             }
-
         }
+
+        List<String> list = im.sortedWords();
+
+        WordShift ws = new WordShift();
+        for (String n : list){
+            im.ocurrencesOfWord(n).forEach((d)->{
+                List<String> nlist = new LinkedList();
+
+                Collections.addAll(nlist, d.getLine().split(" "));
+
+                System.out.println(ws.shift(nlist, d.getPosition(), 0).toString());
+            });
+        }
+
+
 
 
     }
