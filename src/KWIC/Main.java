@@ -40,12 +40,11 @@ public class Main
 
                 Collections.addAll(nlist, d.getLine().split(" "));
 
-                System.out.println(ws.shift(nlist, d.getPosition(), 0).toString());
+                System.out.println(nlist.size());
+
+                ws.shift(nlist, d.getPosition(), 0);
             });
         }
-
-
-
 
     }
 }
