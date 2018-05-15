@@ -3,106 +3,189 @@ package KWIC;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+
 import KWIC.WordShift;
 
-public class Main
-{
-    public static void main(String[] args)
-    {
-        DataStorageManager dsm = new FileBasedStorageManager();
-        dsm.init("t.txt");
+public class Main {
 
-		IndexManager im = new IndexManager();
+
+    //Main pegando do DBLP e printando na tela
+    public static void main(String[] args) {
+        DataStorageManager dsm = new DBLPStorageManager();
+
+        System.out.println("[****************KWIC*********************]");
+
+        //Bloco que le e faz a busca no site DBLP
+        System.out.println("Enter the key");
+        Scanner ler = new Scanner(System.in);
+        String key = ler.nextLine();
+        dsm.init(key);
+        System.out.println("[DBLP SEARCHE KEY = " + key);
+
+        IndexManager im = new IndexManager();
 
 
         String linha;
 
-        for (int lineNumber = 0; lineNumber < dsm.length(); lineNumber++ ){
+        for (int lineNumber = 0; lineNumber < dsm.length(); lineNumber++) {
             linha = dsm.line(lineNumber);
             String[] words = linha.split(" ");
 
-            for (int pos=0; pos < words.length; pos++){
+            for (int pos = 0; pos < words.length; pos++) {
                 im.initMap(words[pos], linha, pos);
-//                System.out.println(pos);
             }
         }
 
         List<String> list = im.sortedWords();
 
+
+        System.out.println("    [WORD]-----------[CONTEXT]");
+        System.out.println();
         WordShift ws = new WordShift();
-        for (String n : list){
-            List<IndexStorage> nlist = new LinkedList();
-            im.ocurrencesOfWord(n).forEach((d)->{
-                nlist.add(d);
-//                System.out.println("________________________________");
-//                System.out.println("Word : "+ n);
-//                System.out.println("Line : " + d.getLine());
-//                System.out.println("Posicao : " + d.getPosition());
-//                System.out.println("________________________________");
-
-//                Collections.addAll(nlist, d.getLine().split(" "));
-
-//                System.out.println(d.getLine());
-
-//                for (String j : nlist){
-//                    System.out.println(j);
-//                }
-
-
-            });
-
-//            for (String j : nlist){
-//                    System.out.println(j);
-//            }
-
-            List<String> list1 = ws.shiftBegin(nlist, n);
-            System.out.println("Word = " + n);
-            for (String j : list1){
-                System.out.println(j);
+        StopWordManager stopWordManager = new StopWordManager();
+        List<String> stopWord = stopWordManager.stopWord("stop_words.txt");
+        for (String n : list) {
+            if (!stopWord.contains(n)) {
+                List<IndexStorage> nlist = new LinkedList();
+                for(IndexStorage e : im.ocurrencesOfWord(n)) {
+                    nlist.add(e);
+                }
+                List<String> list1 = ws.shiftBegin(nlist, n);
+                for (String j : list1) {
+                    System.out.println("    " + j);
+                }
             }
         }
-
+        System.out.println("[_________________________________________]");
+        System.out.println("[****************KWIC*********************]");
     }
-}
 
 
 
 
-
-//        DataStorageManager data = new DBLPStorageManager();
-//        data.init("Carro");
+//    //Main pegando do DBLP e printando na tela
+//    public static void main(String[] args) {
+//        DataStorageManager dsm = new DBLPStorageManager();
+//
+//        System.out.println("[****************KWIC*********************]");
+//
+//        //Bloco que le e faz a busca no site DBLP
+//        System.out.println("Enter the key");
 //        Scanner ler = new Scanner(System.in);
+//        String key = ler.nextLine();
+//        dsm.init(key);
+//        System.out.println("[DBLP SEARCHE KEY = " + key);
 //
-//        System.out.printf("nome de arquivo:\n");
-//        String nome = ler.nextLine();
+//        IndexManager im = new IndexManager();
 //
-//        //System.out.printf("\nConteúdo do texto:\n");
-//        try
-//        {
-//            FileReader arq = new FileReader(nome);
-//            BufferedReader lerArq = new BufferedReader(arq);
 //
-//            String linha = lerArq.readLine();
+//        String linha;
 //
-//            while (linha != null)
-//            {
-//                //Manda linha para gerar shifts:
-//                WordShift.shift(linha);
+//        for (int lineNumber = 0; lineNumber < dsm.length(); lineNumber++) {
+//            linha = dsm.line(lineNumber);
+//            String[] words = linha.split(" ");
 //
-//                linha = lerArq.readLine();
+//            for (int pos = 0; pos < words.length; pos++) {
+//                im.initMap(words[pos], linha, pos);
 //            }
-//
-//            arq.close();
-//        } catch (IOException e)
-//        {
-//            System.err.printf("Erro ao abrir: %s.\n",
-//                    e.getMessage());
 //        }
 //
+//        List<String> list = im.sortedWords();
+//
+//
+//        System.out.println("    [WORD]-----------[CONTEXT]");
 //        System.out.println();
+//        WordShift ws = new WordShift();
+//        StopWordManager stopWordManager = new StopWordManager();
+//        List<String> stopWord = stopWordManager.stopWord("stop_words.txt");
+//        for (String n : list) {
+//            if (!stopWord.contains(n)) {
+//                List<IndexStorage> nlist = new LinkedList();
+//                im.ocurrencesOfWord(n).forEach((d) -> {
+//                    nlist.add(d);
+//                });
+//                List<String> list1 = ws.shiftBegin(nlist, n);
+//                for (String j : list1) {
+//                    System.out.println("    " + j);
+//                }
+//            }
+//        }
+//        System.out.println("[_________________________________________]");
+//        System.out.println("[****************KWIC*********************]");
 //    }
-//}
+
+
+
+
+
+//    /*Main pegando de arquivo e printando na tela
+//    *
+//    * */
+//    public static void main(String[] args){
+//        DataStorageManager dsm = new FileBasedStorageManager();
+//        dsm.init("t.txt");
+//
+//		IndexManager im = new IndexManager();
+//
+//
+//        String linha;
+//
+//        for (int lineNumber = 0; lineNumber < dsm.length(); lineNumber++ ){
+//            linha = dsm.line(lineNumber);
+//            String[] words = linha.split(" ");
+//
+//            for (int pos=0; pos < words.length; pos++){
+//                im.initMap(words[pos], linha, pos);
+////                System.out.println(pos);
+//            }
+//        }
+//
+//        List<String> list = im.sortedWords();
+//
+//
+//        System.out.println("[****************KWIC*********************]");
+//        System.out.println("[FILE BASED = words.txt]");
+//        System.out.println("    [WORD]-----------[CONTEXT]");
+//        System.out.println();
+//        WordShift ws = new WordShift();
+//        StopWordManager stopWordManager = new StopWordManager();
+//        List<String> stopWord = stopWordManager.stopWord("stop_words.txt");
+//        for (String n : list){
+//            if (!stopWord.contains(n)) {
+//                List<IndexStorage> nlist = new LinkedList();
+//                im.ocurrencesOfWord(n).forEach((d) -> {
+//                    nlist.add(d);
+////                System.out.println("________________________________");
+////                System.out.println("Word : "+ n);
+////                System.out.println("Line : " + d.getLine());
+////                System.out.println("Posicao : " + d.getPosition());
+////                System.out.println("________________________________");
+//
+////                Collections.addAll(nlist, d.getLine().split(" "));
+//
+////                System.out.println(d.getLine());
+//
+////                for (String j : nlist){
+////                    System.out.println(j);
+////                }
+//
+//
+//                });
+//
+////            for (String j : nlist){
+////                    System.out.println(j);
+////            }
+//
+//                List<String> list1 = ws.shiftBegin(nlist, n);
+//                for (String j : list1) {
+//                    System.out.println("    " + j);
+//                }
+//            }
+//        }
+//        System.out.println("[_________________________________________]");
+//        System.out.println("[****************KWIC*********************]");
+//
+//
+//    }
+}

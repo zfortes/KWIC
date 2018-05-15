@@ -31,9 +31,6 @@ public class IndexManager {
     }
 
     public List<String> sortedWords(){
-//        List<String> lista;
-//        lista = map.keys();
-//        Collections.sort(lista);
         SortedSet<String> keys = new TreeSet<String>(map.keySet());
         List<String> lista = new ArrayList<>(keys);
         return lista;

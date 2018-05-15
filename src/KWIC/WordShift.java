@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 
 
 public class WordShift {
+
+    //Coloca a keyword no meio e os contextos invertidos
     public List<String> shiftNormal(List<IndexStorage> list, String word) {
         List<String > listFinal = new LinkedList();
         for (IndexStorage n : list){
@@ -35,18 +37,13 @@ public class WordShift {
 
             listFinal.add(shifted);
 
-//            System.out.println("**********************");
-////            System.out.println("left = " +  left);
-//            System.out.println("Frase = " + n.getLine());
-//            System.out.println("Shifted = " + shifted);
-//
-//            System.out.println("word = "+word);
-//            System.out.println("**********************");
         }
 
         return listFinal;
     }
 
+
+    //Coloca a keyword no inicio da linha e o contexto a esquerda invertendo ambos
     public List<String> shiftBegin(List<IndexStorage> list, String word) {
         List<String > listFinal = new LinkedList();
         for (IndexStorage n : list){
@@ -73,13 +70,6 @@ public class WordShift {
 
             listFinal.add(shifted);
 
-//            System.out.println("**********************");
-////            System.out.println("left = " +  left);
-//            System.out.println("Frase = " + n.getLine());
-//            System.out.println("Shifted = " + shifted);
-//
-//            System.out.println("word = "+word);
-//            System.out.println("**********************");
         }
 
         return listFinal;

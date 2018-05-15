@@ -13,11 +13,11 @@ public class DBLPStorageManager implements DataStorageManager {
 
     List<String> lines;
     @Override
-    public void init(String nArq) {
+    public void init(String key) {
 
         List<String> list = new LinkedList();
         try {
-            URL url = new URL("http://dblp.org/search/publ/api?q="+nArq+"&format=json");
+            URL url = new URL("http://dblp.org/search/publ/api?q="+key+"&format=json");
             BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
             String line;
 
