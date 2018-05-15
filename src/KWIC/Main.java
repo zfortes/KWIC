@@ -10,11 +10,34 @@ public class Main
 {
     public static void main(String[] args)
     {
+        DataStorageManager dsm = new FileBasedStorageManager();
+        dsm.init("t.txt");
+
+		IndexManager im = new IndexManager();
+
+
+        String linha;
+
+        for (int lineNumber = 0; lineNumber < dsm.length(); lineNumber++ ){
+            linha = dsm.line(lineNumber);
+            String[] words = linha.split(" ");
+
+            for (int pos=0; pos < words.length; pos++){
+                im.initMap(words[pos], linha, pos);
+            }
+
+        }
+
+
+    }
+}
 
 
 
-        DataStorageManager data = new DBLPStorageManager();
-        data.init("Carro");
+
+
+//        DataStorageManager data = new DBLPStorageManager();
+//        data.init("Carro");
 //        Scanner ler = new Scanner(System.in);
 //
 //        System.out.printf("nome de arquivo:\n");
@@ -42,7 +65,7 @@ public class Main
 //            System.err.printf("Erro ao abrir: %s.\n",
 //                    e.getMessage());
 //        }
-
-        System.out.println();
-    }
-}
+//
+//        System.out.println();
+//    }
+//}
