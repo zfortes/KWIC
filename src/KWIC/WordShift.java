@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 public class WordShift {
 
     //Coloca a keyword no meio e os contextos invertidos
-    public List<String> shiftNormal(List<IndexStorage> list, String word) {
+    public List<String> shiftWeb(List<IndexStorage> list, String word) {
         List<String > listFinal = new LinkedList();
         for (IndexStorage n : list){
             String[] wordS = wordSep(n);
@@ -25,15 +25,16 @@ public class WordShift {
                 right = right.concat(" " + wordS[j]);
             }
 
-            String shifted= "";
+            String shifted= "<center>";
 
             if (!right.isEmpty()){
-                shifted = right + " ";
+                shifted = shifted + right + " ";
             }
-            shifted = shifted + word;
+            shifted = shifted + "<b>" + word + "</b>";
             if (!left.isEmpty()){
                 shifted = shifted + " " + left;
             }
+            shifted = shifted + "</center>";
 
             listFinal.add(shifted);
 
