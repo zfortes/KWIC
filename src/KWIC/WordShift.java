@@ -6,47 +6,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-
+/*Quebra a linha e coloca a key em evidencia.
+*Pode por a key no meio e invertendo o contexto
+* Pode por a key no inicio e inverter o contexto na frente
+ */
 public class WordShift {
-
-    //Coloca a keyword no meio e os contextos invertidos
-    public List<String> shiftWeb(List<IndexStorage> list, String word) {
-        List<String > listFinal = new LinkedList();
-        for (IndexStorage n : list){
-            String[] wordS = wordSep(n);
-
-            String left = "";
-            for (int i =0; i < n.getPosition(); i++){
-                left = left.concat(wordS[i] + " ");
-            }
-
-            String right = "";
-            for (int j = n.getPosition()+1; j < wordS.length; j++){
-                right = right.concat(" " + wordS[j]);
-            }
-
-            String shifted= "<center>";
-
-            if (!right.isEmpty()){
-                shifted = shifted + right + " ";
-            }
-            shifted = shifted + "<b>" + word + "</b>";
-            if (!left.isEmpty()){
-                shifted = shifted + " " + left;
-            }
-            shifted = shifted + "</center>";
-
-            listFinal.add(shifted);
-
-        }
-
-        return listFinal;
-    }
-
-
     //Coloca a keyword no inicio da linha e o contexto a esquerda invertendo ambos
-    public List<String> shiftBegin(List<IndexStorage> list, String word) {
-        List<String > listFinal = new LinkedList();
+    public List<StringStorage> shiftBegin(List<IndexStorage> list, String word) {
+        List<StringStorage > listFinal = new LinkedList();
+        StringStorage stringStorage = new StringStorage();
+        stringStorage.setKeyword(word);
+
         for (IndexStorage n : list){
             String[] wordS = wordSep(n);
 
@@ -60,16 +30,9 @@ public class WordShift {
                 right = right.concat(" " + wordS[j]);
             }
 
-            String shifted= word + " ";
-
-            if (!right.isEmpty()){
-                shifted = shifted + right + "/";
-            }
-            if (!left.isEmpty()){
-                shifted = shifted + left;
-            }
-
-            listFinal.add(shifted);
+            stringStorage.setLeft(left);
+            stringStorage.setRight(right);
+            listFinal.add(stringStorage);
 
         }
 

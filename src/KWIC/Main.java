@@ -5,17 +5,26 @@ import java.util.*;
 
 import KWIC.WordShift;
 
+import javax.xml.crypto.Data;
+
 public class Main {
 
     /*Main pegando de arquivo e printando na tela
      *
      * */
     public static void main(String[] args){
-        DataStorageManager dsm = new DBLPStorageManager();
-        dsm.init("java");
+
+
+        System.out.println("[****************KWIC*********************]");
+        System.out.println();
+
+        //Recebe o tipo de input
+        DataStorageManager dsm = getInput();
+
+        //Inicializa o input
+        dsm.init();
 
         IndexManager im = new IndexManager();
-
 
         String linha;
 
@@ -30,15 +39,12 @@ public class Main {
 
         List<String> list = im.sortedWords();
 
-
-        System.out.println("[****************KWIC*********************]");
-        System.out.println("[FILE BASED = words.txt]");
-        System.out.println("    [WORD]-----------[CONTEXT]");
-        System.out.println();
         WordShift ws = new WordShift();
+
         StopWordManager stopWordManager = new StopWordManager();
         List<String> stopWord = stopWordManager.stopWord("stop_words.txt");
-        List<String> shifted = new LinkedList();
+
+        List<StringStorage> shifted = new LinkedList();
         for (String n : list){
             if (!stopWord.contains(n)) {
                 List<IndexStorage> nlist = new LinkedList();
@@ -46,24 +52,33 @@ public class Main {
                     nlist.add(e);
                 }
 
-
-
-                List<String> list1 = ws.shiftWeb(nlist, n);
-                for (String j : list1) {
+                List<StringStorage> list1 = ws.shiftBegin(nlist, n);
+                for (StringStorage j : list1) {
                     shifted.add(j);
                 }
             }
         }
-        Save save = new SaveFile();
+
+
+        Save save = getOutput();
+
         save.save(shifted);
-
-
 
         System.out.println("[_________________________________________]");
         System.out.println("[****************KWIC*********************]");
 
 
     }
+
+    static DataStorageManager getInput(){
+        return new FileBasedStorageManager();
+    }
+
+    static Save getOutput(){
+        return new SaveScreen();
+    }
+
+
 }
 
 

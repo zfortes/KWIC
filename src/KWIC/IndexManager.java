@@ -2,6 +2,8 @@ package KWIC;
 
 import java.util.*;
 
+/*Pega todas as keywords e as insere em um map q contem a keyword de um lado e uma lista do tipo indexstorage onde
+todos as frases com essa keyword estao salvasa e inclue a possicao da palavra na frase*/
 public class IndexManager {
 
     Map<String, List<IndexStorage>> map = new HashMap<String, List<IndexStorage>>();

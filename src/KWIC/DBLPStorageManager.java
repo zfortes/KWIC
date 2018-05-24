@@ -7,13 +7,18 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
-
+/*Faz a busca no site dblp  e salva os dados em uma list de strings*/
 public class DBLPStorageManager implements DataStorageManager {
 
     List<String> lines;
     @Override
-    public void init(String key) {
+    public void init() {
+        System.out.println("Enter the key");
+        Scanner ler = new Scanner(System.in);
+        String key = ler.nextLine();
+
 
         List<String> list = new LinkedList();
         try {

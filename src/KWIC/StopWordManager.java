@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+/*Le as stopwords do arquivo*/
 public class StopWordManager {
     public List<String> stopWord(String file){
         List<String> lista = new LinkedList<>();

@@ -1,7 +1,7 @@
 package KWIC;
 
 public interface DataStorageManager {
-    public  void init(String nArq);
+    public  void init();
 
     public String line(int index);
 
