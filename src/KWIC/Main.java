@@ -1,11 +1,7 @@
 package KWIC;
 
-import java.io.*;
 import java.util.*;
 
-import KWIC.WordShift;
-
-import javax.xml.crypto.Data;
 
 public class Main {
 
@@ -28,6 +24,7 @@ public class Main {
 
         String linha;
 
+        //Quebra todas as linhas em palavras e as insere no hashmap
         for (int lineNumber = 0; lineNumber < dsm.length(); lineNumber++ ){
             linha = dsm.line(lineNumber);
             String[] words = linha.split(" ");
@@ -37,14 +34,20 @@ public class Main {
             }
         }
 
+        //retorna uma lista com as palavras ordenadas
         List<String> list = im.sortedWords();
 
         WordShift ws = new WordShift();
 
+        //Le as stopwords
         StopWordManager stopWordManager = new StopWordManager();
         List<String> stopWord = stopWordManager.stopWord("stop_words.txt");
 
         List<StringStorage> shifted = new LinkedList();
+
+        /*Se a palavra atual nao e uma stop word entao ele retorna uma lista de incidencias dessa palavra
+        *Em seguida adiciona a linha dessa palavra em uma lista
+         */
         for (String n : list){
             if (!stopWord.contains(n)) {
                 List<IndexStorage> nlist = new LinkedList();
@@ -77,8 +80,6 @@ public class Main {
     static Save getOutput(){
         return new SaveScreen();
     }
-
-
 }
 
 
