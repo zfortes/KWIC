@@ -28,7 +28,6 @@ public class Main {
         for (int lineNumber = 0; lineNumber < dsm.length(); lineNumber++ ){
             linha = dsm.line(lineNumber);
             String[] words = linha.split(" ");
-
             for (int pos=0; pos < words.length; pos++){
                 im.initMap(words[pos], linha, pos);
             }
@@ -50,12 +49,7 @@ public class Main {
          */
         for (String n : list){
             if (!stopWord.contains(n)) {
-                List<IndexStorage> nlist = new LinkedList();
-                for(IndexStorage e : im.ocurrencesOfWord(n)) {
-                    nlist.add(e);
-                }
-
-                List<StringStorage> list1 = ws.shiftBegin(nlist, n);
+                List<StringStorage> list1 = ws.shiftBegin(im.ocurrencesOfWord(n), n);
                 for (StringStorage j : list1) {
                     shifted.add(j);
                 }

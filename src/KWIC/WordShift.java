@@ -7,17 +7,17 @@ import java.io.PrintWriter;
 
 
 /*Quebra a linha e coloca a key em evidencia.
-*Pode por a key no meio e invertendo o contexto
-* Pode por a key no inicio e inverter o contexto na frente
+*Coloca tudo em um objeto do tipo StringStorage
  */
 public class WordShift {
     //Coloca a keyword no inicio da linha e o contexto a esquerda invertendo ambos
     public List<StringStorage> shiftBegin(List<IndexStorage> list, String word) {
         List<StringStorage > listFinal = new LinkedList();
-        StringStorage stringStorage = new StringStorage();
-        stringStorage.setKeyword(word);
+
 
         for (IndexStorage n : list){
+            StringStorage stringStorage = new StringStorage();
+            stringStorage.setKeyword(word);
             String[] wordS = wordSep(n);
 
             String left = "";

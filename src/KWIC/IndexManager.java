@@ -6,7 +6,7 @@ import java.util.*;
 todos as frases com essa keyword estao salvasa e inclue a possicao da palavra na frase*/
 public class IndexManager {
 
-    Map<String, List<IndexStorage>> map = new HashMap<String, List<IndexStorage>>();
+    Map<String, List<IndexStorage>> map = new HashMap();
 
     public boolean isEmpty(){
         return map.isEmpty();
