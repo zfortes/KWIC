@@ -1,0 +1,288 @@
+delta dBase {
+	adds {
+		package KWIC;
+
+		import java.util.List;
+
+		/*Interface de salvamento*/
+		public interface Save {
+			public void save(List<StringStorage> list);
+		}
+
+	}
+	adds{
+		package KWIC;
+		
+		public class StringStorage {
+		    String left, right, keyword;
+		
+		    public String getKeyword() {
+		        return keyword;
+		    }
+		
+		    public String getLeft() {
+		        return left;
+		    }
+		
+		    public String getRight() {
+		        return right;
+		    }
+		
+		    public void setKeyword(String keyword) {
+		        this.keyword = keyword;
+		    }
+		
+		    public void setLeft(String left) {
+		        this.left = left;
+		    }
+		
+		    public void setRight(String right) {
+		        this.right = right;
+		    }
+		}
+	}
+	adds {
+		package KWIC;
+
+		public class IndexStorage {
+			int position;
+			String line;
+			public void setPosition(int i) {
+				position = i;
+			}
+
+			public void setLine(String n) {
+				line = n;
+			}
+
+			public int getPosition() {
+				return position;
+			}
+
+			public String getLine() {
+				return line;
+			}
+		}
+
+	}
+	adds {
+		package KWIC;
+
+		import java.util.*;
+
+		/*Pega todas as keywords e as insere em um map q contem a keyword de um lado e uma lista do tipo indexstorage onde
+		todos as frases com essa keyword estao salvasa e inclue a possicao da palavra na frase*/
+		public class IndexManager {
+
+			Map<String, List<IndexStorage > > map = new HashMap<String,
+						List<IndexStorage > >();
+
+							public boolean isEmpty() {
+								return map.isEmpty();
+							}
+
+							public void initMap(String word, String line, int pos) {
+
+								IndexStorage index = new IndexStorage();
+								index.setLine(line);
+								index.setPosition(pos);
+
+								if(map.containsKey(word)) {
+									map.get(word).add(index);
+								}
+								else {
+									List<IndexStorage> list = new LinkedList();
+									list.add(index);
+									map.put(word, list);
+								}
+							}
+
+							public List<IndexStorage> ocurrencesOfWord(String word) {
+								return map.get(word);
+							}
+
+							public List<String> sortedWords() {
+								SortedSet<String> keys = new TreeSet<String>(map.keySet());
+								List<String> lista = new ArrayList(keys);
+								return lista;
+							}
+
+						}
+
+					}
+					adds {
+						package KWIC;
+
+						public interface DataStorageManager {
+							public void init();
+
+							public String line(int index);
+
+							public int length();
+
+						}
+
+					}
+					adds {
+						package KWIC;
+
+						import java.io.BufferedReader;
+						import java.io.FileReader;
+						import java.io.IOException;
+						import java.util.LinkedList;
+						import java.util.List;
+
+						/*Le as stopwords do arquivo*/
+						public class StopWordManager {
+							public List<String> stopWord(String file) {
+								List<String> lista = new LinkedList();
+								try{
+									FileReader arq = new FileReader(file);
+									BufferedReader lerArq = new BufferedReader(arq);
+									String n = lerArq.readLine();
+									while(n != null) {
+										lista.add(n);
+										n = lerArq.readLine();
+									}
+									arq.close();
+								}
+								catch(IOException e) {
+									System.err.printf("Erro ao abrir: %s.\n", e.getMessage());
+								}
+								return lista;
+
+							}
+
+						}
+
+					}
+					adds {
+						package KWIC;
+
+						import java.util.*;
+						import java.io.FileWriter;
+						import java.io.IOException;
+						import java.io.PrintWriter;
+						
+						
+						/*Quebra a linha e coloca a key em evidencia.
+						*Coloca tudo em um objeto do tipo StringStorage
+						 */
+						public class WordShift {
+						    //Coloca a keyword no inicio da linha e o contexto a esquerda invertendo ambos
+						    public List<StringStorage> shiftBegin(List<IndexStorage> list, String word) {
+						        List<StringStorage > listFinal = new LinkedList();
+						        
+						        for (IndexStorage n : list){
+						        	StringStorage stringStorage = new StringStorage();
+						       		stringStorage.setKeyword(word);
+						            String[] wordS = wordSep(n);
+						
+						            String left = "";
+						            for (int i =0; i < n.getPosition(); i++){
+						                left = left.concat(wordS[i] + " ");
+						            }
+						
+						            String right = "";
+						            for (int j = n.getPosition()+1; j < wordS.length; j++){
+						                right = right.concat(" " + wordS[j]);
+						            }
+						
+						            stringStorage.setLeft(left);
+						            stringStorage.setRight(right);
+						            listFinal.add(stringStorage);
+						
+						        }
+						
+						        return listFinal;
+						    }
+						
+						    public String[] wordSep(IndexStorage storage){
+						        String aux = storage.getLine();
+						
+						        return aux.split(" ");
+						
+						    }
+						}
+					}
+					adds {
+						package KWIC;
+
+						import java.util.*;
+						
+						
+						public class Main {
+						
+						    /*Main pegando de arquivo e printando na tela
+						     *
+						     * */
+						    public static void main(String[] args){
+						
+						
+						        System.out.println("[****************KWIC*********************]");
+						        System.out.println();
+						
+						        //Recebe o tipo de input
+						        DataStorageManager dsm = getInput();
+						
+						        //Inicializa o input
+						        dsm.init();
+						
+						        IndexManager im = new IndexManager();
+						
+						        String linha;
+						
+						        //Quebra todas as linhas em palavras e as insere no hashmap
+						        for (int lineNumber = 0; lineNumber < dsm.length(); lineNumber++ ){
+						            linha = dsm.line(lineNumber);
+						            String[] words = linha.split(" ");
+						            for (int pos=0; pos < words.length; pos++){
+						                im.initMap(words[pos], linha, pos);
+						            }
+						        }
+						
+						        //retorna uma lista com as palavras ordenadas
+						        List<String> list = im.sortedWords();
+						
+						        WordShift ws = new WordShift();
+						
+						        //Le as stopwords
+						        StopWordManager stopWordManager = new StopWordManager();
+						        List<String> stopWord = stopWordManager.stopWord("stop_words.txt");
+						
+						        List<StringStorage> shifted = new LinkedList();
+						
+						        /*Se a palavra atual nao e uma stop word entao ele retorna uma lista de incidencias dessa palavra
+						        *Em seguida adiciona a linha dessa palavra em uma lista
+						         */
+						        for (String n : list){
+						            if (!stopWord.contains(n)) {
+						                List<StringStorage> list1 = ws.shiftBegin(im.ocurrencesOfWord(n), n);
+						                for (StringStorage j : list1) {
+						                    shifted.add(j);
+						                }
+						            }
+						        }
+						
+						
+						        Save save = getOutput();
+						
+						        save.save(shifted);
+						
+						        System.out.println("[_________________________________________]");
+						        System.out.println("[****************KWIC*********************]");
+						
+						
+						    }
+						
+						    static DataStorageManager getInput(){
+						        return new FileBasedStorageManager();
+						    }
+						
+						    static Save getOutput(){
+						        return new SaveScreen();
+						    }
+						}
+
+					}
+				}

@@ -1,0 +1,31 @@
+SPL KwicDeltaJ {
+
+	Features = {base,output, input, fileout, telaout, dblp, filein}
+
+	Deltas = {dBase, dFileOut, dTelaOut, dDblp, dFileIn}
+
+	Constraints {
+		base & output & input;
+		output & (fileout ^ telaout);
+		input & (dblp ^ filein);
+	}
+
+	Partitions { 
+		{dBase} when (base);
+		
+		{dDblp} when (dblp);
+		
+		{dFileIn} when (filein);
+		
+		{dFileOut} when (fileout);
+		
+		{dTelaOut} when (telaout);
+	}
+
+	Products {
+		ArquivoArquivo = {base, input, filein, output, fileout}; 
+		DBLPArquivi = {base, input, dblp, output, fileout};
+		ArquivoTela = {base, input, filein, output, telaout};
+		DBLPTela = {base, input, dblp, output, telaout};
+	}
+}

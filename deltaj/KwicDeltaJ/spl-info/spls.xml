@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spls xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../bin/spls.xsd">
+	<spl name="KwicDeltaJ">
+		<features>
+			<feature name ="base" />
+			<feature name ="output" />
+			<feature name ="input" />
+			<feature name ="fileout" />
+			<feature name ="telaout" />
+			<feature name ="dblp" />
+			<feature name ="filein" />
+		</features>
+		<configurations>
+			<configuration formula="base AND output AND input
+			" />
+			<configuration formula="output AND (fileout XOR telaout)
+			" />
+			<configuration formula="input AND (dblp XOR filein)
+			" />
+		</configurations>
+		<deltas>
+			<partition>
+				<modul delta="dBase" when="base
+				" />
+			</partition>
+			<partition>
+				<modul delta="dDblp" when="dblp
+				" />
+			</partition>
+			<partition>
+				<modul delta="dFileIn" when="filein
+				" />
+			</partition>
+			<partition>
+				<modul delta="dFileOut" when="fileout
+				" />
+			</partition>
+			<partition>
+				<modul delta="dTelaOut" when="telaout
+				" />
+			</partition>
+		</deltas>
+	</spl>
+</spls>
